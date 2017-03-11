@@ -37,7 +37,10 @@ var config = {
         startDate: startDate,
         monthlyRate: monthlyRate
       });
-
+      $("#name-input").val("");
+      $("#role-input").val("");
+      $("#start-input").val("");
+      $("#monthly-rate-input").val("");
     });
 
     // Firebase watcher + initial loader HINT: .on("value")
@@ -71,3 +74,34 @@ var config = {
     }, function(errorObject) {
       console.log("Errors handled: " + errorObject.code);
     });
+
+     // Firebase watcher + initial loader HINT: This code behaves similarly to .on("value")
+    database.ref().on("child_added", function(childSnapshot) {
+
+      // Log everything that's coming out of snapshot
+      console.log(childSnapshot.val().name);
+      console.log(childSnapshot.val().role);
+      console.log(childSnapshot.val().startDate);
+      console.log(childSnapshot.val().monthlyRate);
+
+      // full list of items to the well
+      $("#emp-table").append("<tr> <td>" + childSnapshot.val().name + "</td>" +
+          "<td>" + childSnapshot.val().role + "</td>" +
+          "<td>" + childSnapshot.val().startDate + "</td>" +
+          "<td>" + childSnapshot.val().monthlyRate + "</td>" +
+        "</tr>");
+
+    // Handle the errors
+    }, function(errorObject) {
+      console.log("Errors handled: " + errorObject.code);
+    });
+
+    database.ref().orderByChild("dateAdded").limitToLast(1).on("child_added", function(snapshot) {
+
+      // Change the HTML to reflect
+      $("#name-display").html(snapshot.val().name);
+      $("#email-display").html(snapshot.val().email);
+      $("#age-display").html(snapshot.val().age);
+      $("#comment-display").html(snapshot.val().comment);
+    });
+
