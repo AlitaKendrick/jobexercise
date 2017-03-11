@@ -1,3 +1,4 @@
+
 var config = {
    apiKey: "AIzaSyAWpzC4G8HMign764v1_CE02b-Rg4moB48",
    authDomain: "test-test-63488.firebaseapp.com",
