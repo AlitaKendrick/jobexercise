@@ -11,8 +11,11 @@
 
   	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+<<<<<<< HEAD
 	<script src="app.js"></script>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+=======
+>>>>>>> 2f065cf1b2bc282e3690e0fc932c1df7917d318d
 
 </head>
 <body>
@@ -41,28 +44,38 @@
 
 	<div class="row">
 		
-		<div class="col-md-4" id="form">
-			
-			<div class="input-group">
-			 <span class="input-group-addon" id="fName">First Name</span>
-			 <input type="text" class="form-control" placeholder="">
-			</div>
-			<div class="input-group">
-			 <span class="input-group-addon" id="lname">Last Name</span>
-			 <input type="text" class="form-control" placeholder="">
-			</div>
-			<div class="input-group">
-			 <span class="input-group-addon" id="sDate">Start Date</span>
-			 <input type="text" class="form-control" placeholder="Month/Day/Year">
-			</div>
-			<div class="input-group">
-			 <span class="input-group-addon" id="mRate">Monthly Rate</span>
-			 <input type="text" class="form-control" placeholder="">
-			</div>
+		<div class="col-lg-6">
+	        <div class="panel panel-default">
+	          <div class="panel-heading">
+	            <h3 class="panel-title">Add Employee</h3>
+	          </div>
+	          <div class="panel-body">
 
-		</div>	
-	
-</div>
+	            <!-- Sign-up Form (note the various input "types")-->
+	            <form role="form">
+	              <div class="form-group">
+	                <label for="name-input">Employee Name:</label>
+	                <input class="form-control" id="name-input" type="text">
+	              </div>
+	              <div class="form-group">
+	                <label for="role-input">Role</label>
+	                <input class="form-control" id="role-input" type="text">
+	              </div>
+	              <div class="form-group">
+	                <label for="start-input">Start Date</label>
+	                <input class="form-control" id="start-input" type="number">
+	              </div>
+	              <div class="form-group">
+	                <label for="monthly-rate-input">Monthly Rate</label>
+	                <input class="form-control" id="monthly-rate-input" type="number">
+	              </div>
+	              <button class="btn btn-default" id="add-user" type="submit">Submit</button>
+	            </form>
+	          </div>
+	        </div>
+	      </div>
+		
+	</div>
 </div>
  
 
