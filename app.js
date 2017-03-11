@@ -44,6 +44,9 @@ var config = {
 
       // storing the snapshot.val() in a variable for convenience
       var sv = snapshot.val();
+
+      // if snapshot.val has data, run this
+      if (snapshot.val() !== null) {
       
       // Getting an array of each key In the snapshot object
       var svArr = Object.keys(sv);
@@ -61,6 +64,7 @@ var config = {
       console.log(lastObj.role);
       console.log(lastObj.startDate);
       console.log(lastObj.monthlyRate);
+    }
 
       // Handle the errors
     }, function(errorObject) {
