@@ -18,11 +18,12 @@ var config = {
     var role = "";
     var startDate = 0;
     var monthlyRate = "";
+    
 
     // Capture Button Click
     $("#add-user").on("click", function(event) {
       event.preventDefault();
-
+      
       // Grabbed values from text boxes
       name = $("#name-input").val().trim();
       role = $("#role-input").val().trim();
