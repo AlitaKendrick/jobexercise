@@ -15,9 +15,9 @@ var config = {
 
     // Initial Values
     var name = "";
-    var email = "";
-    var age = 0;
-    var comment = "";
+    var role = "";
+    var startDate = 0;
+    var monthlyRate = "";
 
     // Capture Button Click
     $("#add-user").on("click", function(event) {
@@ -25,16 +25,16 @@ var config = {
 
       // Grabbed values from text boxes
       name = $("#name-input").val().trim();
-      email = $("#email-input").val().trim();
-      age = $("#age-input").val().trim();
-      comment = $("#comment-input").val().trim();
+      role = $("#role-input").val().trim();
+      startDate = $("#start-input").val().trim();
+      monthlyRate = $("#monthly-rate-input").val().trim();
 
       // Code for handling the push
       database.ref().push({
         name: name,
-        email: email,
-        age: age,
-        comment: comment
+        role: role,
+        startDate: startDate,
+        monthlyRate: monthlyRate
       });
 
     });
@@ -58,15 +58,9 @@ var config = {
 
       // Console.loging the last user's data
       console.log(lastObj.name);
-      console.log(lastObj.email);
-      console.log(lastObj.age);
-      console.log(lastObj.comment);
-
-      // Change the HTML to reflect
-      $("#name-display").html(lastObj.name);
-      $("#email-display").html(lastObj.email);
-      $("#age-display").html(lastObj.age);
-      $("#comment-display").html(lastObj.comment);
+      console.log(lastObj.role);
+      console.log(lastObj.startDate);
+      console.log(lastObj.monthlyRate);
 
       // Handle the errors
     }, function(errorObject) {
