@@ -18,7 +18,7 @@ var config = {
     var role = "";
     var startDate = 0;
     var monthlyRate = "";
-    
+
 
     // Capture Button Click
     $("#add-user").on("click", function(event) {
@@ -68,6 +68,7 @@ var config = {
       console.log(lastObj.role);
       console.log(lastObj.startDate);
       console.log(lastObj.monthlyRate);
+
     }
 
       // Handle the errors
@@ -83,12 +84,15 @@ var config = {
       console.log(childSnapshot.val().role);
       console.log(childSnapshot.val().startDate);
       console.log(childSnapshot.val().monthlyRate);
-
+      
+      monthsWorked = moment().diff(moment(childSnapshot.val().startDate), "months")
       // full list of items to the well
       $("#emp-table").append("<tr> <td>" + childSnapshot.val().name + "</td>" +
           "<td>" + childSnapshot.val().role + "</td>" +
           "<td>" + childSnapshot.val().startDate + "</td>" +
+          "<td>" + monthsWorked + "</td>" +
           "<td>" + childSnapshot.val().monthlyRate + "</td>" +
+          "<td>" + ("$" + childSnapshot.val().monthlyRate * monthsWorked) + "</td>" +
         "</tr>");
 
     // Handle the errors
